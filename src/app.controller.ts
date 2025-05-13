@@ -6,13 +6,10 @@ export class AppController {
   
 
   @Get()
-  getHello(): string {
-    return 'HELLO WORLD';
+  getIndex(): string {
+    return 'Home page';
   }
   
-  @Get('world')
-  getWorld(): string {
-    return 'world';
-  }
+  
   
 }
