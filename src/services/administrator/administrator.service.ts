@@ -21,6 +21,10 @@ export class AdministratorService {
         return this.administrator.findOneBy({ administratorId: id });
     }
     add(data: AddAdministratorDto): Promise<Administrator> {
+         if (!data || typeof data.password !== 'string') {
+        throw new TypeError('Password must be provided as a string.');
+    }
+
         const crypto = require('crypto');
         
         const passwordHash = crypto.createHash('sha512');
