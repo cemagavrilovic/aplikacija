@@ -20,7 +20,7 @@ export class AdministratorService {
     getById(id: number): Promise<Administrator | null> {
         return this.administrator.findOneBy({ administratorId: id });
     }
-    add(data: AddAdministratorDto){
+    add(data: AddAdministratorDto): Promise<Administrator> {
         const crypto = require('crypto');
         
         const passwordHash = crypto.createHash('sha512');
