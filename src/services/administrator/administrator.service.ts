@@ -26,7 +26,7 @@ export class AdministratorService {
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
         
-        const passwordHashString = passwordHash.digest('hex').topUpperCase();
+        const passwordHashString = passwordHash.digest('hex').toUpperCase();
         
         let newAdmin: Administrator = new Administrator();
         newAdmin.username = data.username;
